@@ -15,9 +15,12 @@ angular.module('yoDoApp')
     $scope.$watch('todos', function () {
     	localStorageService.set('todos', $scope.todos);
     }, true);
-    
+
     $scope.addTodo = function () {
+    	if ($scope.todo != "") {
+    	console.log("Enter something");
     	$scope.todos.push($scope.todo);
+    }
     	$scope.todo = '';
     }
     $scope.removeTodo = function (index) {
